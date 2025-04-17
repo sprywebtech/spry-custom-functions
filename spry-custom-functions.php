@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Include the update checker from the libs/updates subdirectory
-require_once plugin_dir_path(__FILE__) . 'libs/updates/plugin-update-checker/plugin-update-checker.php';
+require_once plugins_url(__FILE__) . 'libs/updates/plugin-update-checker/plugin-update-checker.php';
 use YahnisElsts\PluginUpdateChecker\v5\PucFactory;
 
 // Set up the update checker
