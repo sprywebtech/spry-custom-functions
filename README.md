@@ -1,0 +1,1 @@
+Simple, small, and lightweight WordPress plugin that allows you to enter custom functions just like you would use functions.php in a theme. This solves the issue of not having a functions.php file for some page builders. There is no admin interface, so adding custom functions works just like adding them to functions.php via a code editor. 
