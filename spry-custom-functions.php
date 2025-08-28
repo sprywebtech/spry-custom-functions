@@ -32,3 +32,42 @@ $myUpdateChecker->getVcsApi()->enableReleaseAssets();
 /* Add custom functions below this line
 ========================================= */
 
+// Replaces the WordPress logo with Site Icon on login page.
+
+function custom_login_logo() {
+    // Get the site icon URL
+    $site_icon_url = get_site_icon_url();
+    
+    // Only proceed if a site icon is set
+    if ($site_icon_url) {
+        ?>
+        <style type="text/css">
+            #login h1 a, .login h1 a {
+                background-image: url(<?php echo esc_url($site_icon_url); ?>);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 125px;
+                height: 125px;
+            }
+        </style>
+        <?php
+    }
+}
+add_action('login_enqueue_scripts', 'custom_login_logo');
+
+/**
+ * Change login logo URL to home page
+ */
+function custom_login_logo_url() {
+    return home_url();
+}
+add_filter('login_headerurl', 'custom_login_logo_url');
+
+/**
+ * Change login logo title attribute to site name
+ */
+function custom_login_logo_url_title() {
+    return get_bloginfo('name');
+}
+add_filter('login_headertitle', 'custom_login_logo_url_title');
