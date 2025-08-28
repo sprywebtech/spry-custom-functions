@@ -66,3 +66,7 @@ For support or feature requests, please use the GitHub repository's issue tracke
 ## Changelog
 ### 1.0.0
 - Initial release
+### 1.0.2
+Added update checker
+### 1.0.3
+Added function to use the site icon as the logo for the login form.
